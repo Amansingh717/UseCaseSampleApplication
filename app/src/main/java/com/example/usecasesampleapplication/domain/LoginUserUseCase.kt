@@ -1,14 +1,14 @@
 package com.example.usecasesampleapplication.domain
 
 import com.example.usecasesampleapplication.repository.UserRepo
-import com.example.usecasesampleapplication.repository.implementation.UserRepoImpl
 
 interface LoginUserUseCase {
     operator fun invoke(userName: String?, password: String?): String
 }
 
-class LoginUserUseCaseImpl : LoginUserUseCase {
-    private val userRepo: UserRepo by lazy { UserRepoImpl() }
+class LoginUserUseCaseImpl(
+    private val userRepo: UserRepo
+) : LoginUserUseCase {
 
     override fun invoke(userName: String?, password: String?): String {
         val result = if (userName == null || password == null) null

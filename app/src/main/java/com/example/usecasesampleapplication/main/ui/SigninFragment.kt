@@ -12,7 +12,6 @@ import com.example.usecasesampleapplication.navigateTo
 import kotlinx.android.synthetic.main.fragment_signin.*
 
 class SigninFragment : ParentFragment<SignInViewModel>() {
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
